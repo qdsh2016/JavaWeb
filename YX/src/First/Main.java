@@ -23,7 +23,7 @@ public class Main {
 		jrame.setSize(500, 500);
 		JPanel jpanel=new JPanel();
 		jpanel.setBackground(Color.black);
-		
+		//github Test
 		JButton jbutton=new JButton();
 		JButton jbutton2=new JButton();
 		Dimension dimension=new Dimension(20, 20);
