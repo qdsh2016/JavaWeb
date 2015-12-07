@@ -6,10 +6,14 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.Timer;
+
+import javax.management.openmbean.KeyAlreadyExistsException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -24,6 +28,9 @@ public class Main {
 		JPanel jpanel=new JPanel();
 		jpanel.setBackground(Color.black);
 		JButton jbutton=new JButton();
+		jbutton.setText("s");
+       
+		
 		JButton jbutton2=new JButton();
 		Dimension dimension=new Dimension(20, 20);
 		jbutton2.setPreferredSize(dimension);
@@ -40,6 +47,9 @@ public class Main {
           	 timer.schedule(task, 1000, 200);
 			}
 		});
+		
+		
+		
 		jbutton.setBackground(Color.blue);
 		jpanel.add(jbutton);
 		jpanel.add(jbutton2);
@@ -52,17 +62,59 @@ class MyTask extends java.util.TimerTask{
 	int second;
 	JButton j;
 	public void run() {
-//		Date date =new Date();
-//		this.second=date.getSeconds();
-//	 	 System.out.println(second);
-		Point p=j.getLocation();
-		int x=(int)p.getX();int y=(int)p.getY();
+	
+		 j.addKeyListener(new KeyListener() {
+				public void keyTyped(KeyEvent e) {
+				j.setText((String.valueOf(e.getKeyChar())));
+				System.out.print((int)j.getLocation().getX());
+	        	System.out.println("a");
+				System.out.print((int)j.getLocation().getY());
+				System.out.println("b");
 
+
+				
+				
+				
+			}
+				public void keyReleased(KeyEvent e){}
+				public void keyPressed(KeyEvent e) {}
+			});
+		
+		
+		String i=j.getText();
+     
+		if(i.equals("s")){
+        	j.setLocation((int)j.getLocation().getX(), (int)j.getLocation().getY()+5);
+        	System.out.print((int)j.getLocation().getX());
+        	System.out.println("a");
+			System.out.print((int)j.getLocation().getY());
+			System.out.println("b");
+        	
+        	
+        }else if (i.equals("w")) {
+        	j.setLocation((int)j.getLocation().getX(), (int)j.getLocation().getY()-5);
+        	
+        	
+        }else if (i.equals("a")) {
+        	j.setLocation((int)j.getLocation().getX()-5, (int)j.getLocation().getY());
+        	
+        }else if (i.equals("d")) {
+        	
+        	j.setLocation((int)j.getLocation().getX()+5, (int)j.getLocation().getY());
+        	System.out.print((int)j.getLocation().getX());
+        	System.out.println("a");
+			System.out.print((int)j.getLocation().getY());
+			System.out.println("b");
+        	
+        }
+
+		//j.setLocation(x, y+5);
+		
 		
 		    
-			j.setLocation(x, y+5);
+			//j.setLocation(x, y+5);
 		
-	
+	                  
 			//j.setLocation(x, y-5);	
 			
 		
@@ -75,6 +127,7 @@ class MyTask extends java.util.TimerTask{
 		this.j=j;
 	}
 }
+
 
 
 
