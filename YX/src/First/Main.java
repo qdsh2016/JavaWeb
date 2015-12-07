@@ -21,25 +21,18 @@ public class Main {
 		JPanel jpanel = new JPanel();
 		jpanel.setBackground(Color.black);
 		jpanel.setLayout(null);
-		
 		JButton jbutton = new JButton();
 		jbutton.setBounds(250, 250, 20, 20);
 		jbutton.setText("s");
-
 		jbutton.addKeyListener(new KeyListener() {
 			public void keyTyped(KeyEvent e) {
 				jbutton.setText((String.valueOf(e.getKeyChar())));
-				
-
 			}
-
 			public void keyReleased(KeyEvent e) {
 			}
-
 			public void keyPressed(KeyEvent e) {
 			}
 		});
-
 		JButton jbutton2 = new JButton();
 		jbutton2.setBounds(280, 250, 20, 20);
 		Dimension dimension = new Dimension(20, 20);
@@ -49,15 +42,14 @@ public class Main {
 		// ImageIcon defaultIcon=new ImageIcon("xx/ljt.jpg");
 		// jbutton.setIcon(defaultIcon);
 		jbutton.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				Timer timer = new Timer();
 				MyTask task = new MyTask();
-				task.setjbutton(jbutton);
+				task.setjbutton1(jbutton);
+				task.setjbutton2(jbutton2);
 				timer.schedule(task, 1000, 200);
 			}
 		});
-
 		jbutton.setBackground(Color.blue);
 		jpanel.add(jbutton);
 		jpanel.add(jbutton2);
@@ -70,42 +62,49 @@ public class Main {
 class MyTask extends java.util.TimerTask {
 	int second;
 	JButton j;
-
+	JButton j2;
 	public void run() {
-
 		String i = j.getText();
-		int x=(int) j.getLocation().getX();
-		int y=(int) j.getLocation().getY();
+		int x= j.getLocation().x;
+		int y= j.getLocation().y;
 
 		if (i.equals("s")) {
-			j.setLocation(x, y+5);
-			
+			j.setLocation(x, y+8);
 		} else if (i.equals("w")) {
-			j.setLocation(x, y - 5);
-
+			j.setLocation(x, y - 8);
 		} else if (i.equals("a")) {
-			j.setLocation(x - 5, y);
-
+			j.setLocation(x - 8, y);
 		} else if (i.equals("d")) {
-
-			j.setLocation(x + 5, y);
-			
-
+			j.setLocation(x + 8, y);
 		}
-
-		// j.setLocation(x, y+5);
-
-		// j.setLocation(x, y+5);
-
-		// j.setLocation(x, y-5);
-
+	//change button2 location when they meet
+	int distance1=j.getLocation().x-j2.getLocation().x;
+	int distance2=j.getLocation().y-j2.getLocation().y;
+	if(distance1<=5&&distance2<=5){
+		int f1=(int)Math.random()*400+50;
+		int f2=(int)Math.random()*400+50;
+		
+		j2.setLocation(f1, f2);
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	};
 
 	public int getsecond() {
 		return this.second;
 	}
-
-	public void setjbutton(JButton j) {
+	public void setjbutton1(JButton j) {
 		this.j = j;
+	}
+	public void setjbutton2(JButton j2) {
+		this.j2 = j2;
 	}
 }
