@@ -1,6 +1,7 @@
 package servletController;
 
 import java.io.IOException;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,12 +27,16 @@ public class DispatcherController extends HttpServlet {
 		String path = url.substring(12, url.length());
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);*/
+	
+		request.
 		
 		
 		
 		
 		
 		
+		
+		//response
 		
 		
 		

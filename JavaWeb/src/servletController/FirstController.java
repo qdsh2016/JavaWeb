@@ -20,8 +20,12 @@ public class FirstController extends HttpServlet {
     }
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
+    	//request
     	
-    	response.getWriter().println("FirstController");
+    	
+    	
+    	
+    	//response
     	
     	
     	
