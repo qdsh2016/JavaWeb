@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class Second
  */
 @WebServlet("/2")
-public class Second extends HttpServlet {
+public class SecondController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public Second() {
+    public SecondController() {
         super();
     }
  protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

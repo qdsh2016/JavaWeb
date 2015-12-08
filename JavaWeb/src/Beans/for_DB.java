@@ -1,6 +1,6 @@
 package Beans;
 
-public class Connect_Mysql {
+public class for_DB {
 //JDBC connection for MySQl
 	
 	
