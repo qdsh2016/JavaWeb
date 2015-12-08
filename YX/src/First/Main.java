@@ -16,13 +16,13 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		JFrame jrame = new JFrame("HelloEveryone");
+		JFrame jrame = new JFrame("Can U Catch Me?");
 		jrame.setSize(500, 500);
 		JPanel jpanel = new JPanel();
 		jpanel.setBackground(Color.black);
 		jpanel.setLayout(null);
 		JButton jbutton = new JButton();
-		jbutton.setBounds(250, 250, 20, 20);
+		jbutton.setBounds(160, 160, 20, 20);
 		jbutton.setText("s");
 		jbutton.addKeyListener(new KeyListener() {
 			public void keyTyped(KeyEvent e) {
@@ -77,25 +77,19 @@ class MyTask extends java.util.TimerTask {
 		} else if (i.equals("d")) {
 			j.setLocation(x + 8, y);
 		}
+		
 	//change button2 location when they meet
 	int distance1=j.getLocation().x-j2.getLocation().x;
 	int distance2=j.getLocation().y-j2.getLocation().y;
-	if(distance1<=5&&distance2<=5){
-		int f1=(int)Math.random()*400+50;
-		int f2=(int)Math.random()*400+50;
+	if(distance1<=20&&distance2<=20){
+		int f1=(int)(Math.random()*400);
+		int f2=(int)(Math.random()*400);
+
 		
 		j2.setLocation(f1, f2);
 		
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	};
 
 	public int getsecond() {
