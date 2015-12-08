@@ -12,30 +12,36 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class DispatcherController
  */
-@WebServlet(description = "url_dispatcher", urlPatterns = { "/Dis/*" })
+@WebServlet(description = "url_dispatcher", urlPatterns = { "/0/*" })
 public class DispatcherController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public DispatcherController() {
         super();
     }
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
+   
+    //Just use "Request + Response" writing JAVA code to realize the WebServer's Function..like connect DB +WebApp's Function.. 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = request.getRequestURI();
+		
+		/*String url = request.getRequestURI();
 		String path = url.substring(12, url.length());
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
-		dispatcher.forward(request, response);
+		dispatcher.forward(request, response);*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		response.getWriter().append("Your URL: " +request.getRequestURI()+" doesn't match Servlet on my server. ");
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
