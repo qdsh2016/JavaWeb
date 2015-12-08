@@ -1,6 +1,8 @@
 package javacode;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,10 +28,11 @@ public class DispatcherController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url=request.getRequestURI();
 		String path=url.substring(13, url.length());
-		int a=1;
+		
+		RequestDispatcher dispatcher= request.getRequestDispatcher(path);
 		
 		
-		
+		dispatcher.forward(request, response);
 		
 		
 		
