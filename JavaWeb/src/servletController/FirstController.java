@@ -12,7 +12,7 @@ import sun.print.resources.serviceui;
 /**
  * Servlet implementation class First
  */
-@WebServlet("/1")
+@WebServlet("/First")
 public class FirstController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public FirstController() {
@@ -21,27 +21,20 @@ public class FirstController extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
     	//request
+    
     	
     	
     	
     	
+    	
+    	
+    	
+    	
+    	
+    	
+    	request.getRequestDispatcher("/First.jsp").forward(request, response);
     	//response
     	
-    	
-    	
-    	
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("DefaultedInfo:Served at: ").append(request.getContextPath());

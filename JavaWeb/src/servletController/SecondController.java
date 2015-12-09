@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Second
  */
-@WebServlet("/2")
+@WebServlet("/Second")
 public class SecondController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public SecondController() {
@@ -18,26 +18,21 @@ public class SecondController extends HttpServlet {
     }
  protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
-    	//request
-    	
-    	//response
-    	
-    	
-    	
-    }
-    
-    
-    
-    
-
+		// request
+		
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 request.getRequestDispatcher("/Second.jsp").forward(request, response);
+		// response
+   
  
- 
- 
- 
- 
-    
-    
-    
+ }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
