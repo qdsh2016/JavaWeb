@@ -22,8 +22,8 @@ public class for_DB {
 		Class.forName("org.gjt.mm.mysql.Driver");
 		this.con = DriverManager.getConnection("jdbc:mysql://192.168.1.91:3306/yx", "root", "root");
 		this.statement=con.createStatement();
-		//  ResultSet res = stmt.executeQuery("select xxx_PROCEDURE");
-		//  ResultSet 's column & row  data output
+		//  ResultSet res = stmt.executeQuery("call xxx_PROCEDURE");
+		//  ResultSet 's column & row 's  data output
 		return this.statement;
    } catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
