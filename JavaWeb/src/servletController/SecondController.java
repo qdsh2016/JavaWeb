@@ -28,7 +28,7 @@ public class SecondController extends HttpServlet {
 	 
 	 
 	 
-	 request.getRequestDispatcher("/Second.jsp").forward(request, response);
+	 request.getRequestDispatcher("Second.jsp").forward(request, response);
 		// response
    
  

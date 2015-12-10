@@ -19,19 +19,22 @@ public class FirstController extends HttpServlet {
         super();
     }
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	
     	//request
+    
+    	
+    	request.getRequestDispatcher("First.jsp").forward(request, response);
+    	//response
     
     	
     	
     	
-    	//response.getWriter().append("xxxx ");
     	
     	
     	
     	
-    	request.getRequestDispatcher("First.jsp").forward(request, response);
-    	//response
+    	
+    	
+    	
     	
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
