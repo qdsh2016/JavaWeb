@@ -35,9 +35,14 @@ public class SecondController extends HttpServlet {
 		
 		}
     } catch (SQLException e) {
-		System.out.println("get ResultSet  ERROR");
+        e.printStackTrace();
+    } finally {
+		try {
+			stst.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
-	 
  }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
