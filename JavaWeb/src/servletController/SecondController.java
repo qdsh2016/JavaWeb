@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Beans.for_DB;
+
 /**
  * Servlet implementation class Second
  */
@@ -21,17 +23,17 @@ public class SecondController extends HttpServlet {
 		// request
 		
 	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
 	 request.getRequestDispatcher("Second.jsp").forward(request, response);
 		// response
    
  
+	 
+	 
+	 
+	 
+	 
+	 
+	 
  }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
