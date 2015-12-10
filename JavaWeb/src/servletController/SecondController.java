@@ -29,7 +29,8 @@ public class SecondController extends HttpServlet {
     try {
 		ResultSet rs=stst.executeQuery("call xx()");
 		while (rs.next()) {
-			  String ss= rs.getString(1);
+			  String ss="";
+			  ss=ss + rs.getString(1) + "&&";
 			  response.getWriter().println(ss);
 		
 		
