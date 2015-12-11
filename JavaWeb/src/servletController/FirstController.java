@@ -25,9 +25,8 @@ public class FirstController extends HttpServlet {
     	request.getRequestDispatcher("First.jsp").forward(request, response);
     	//response
     
-    	
-    	
-
+    
+//          response.getWriter().write("asdsfgghhjkl");
     	
     	
     	
