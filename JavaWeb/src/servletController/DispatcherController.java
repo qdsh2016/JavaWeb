@@ -15,7 +15,10 @@ import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 /**
  * Servlet implementation class DispatcherController
  */
-@WebServlet(description = "url_dispatcher", urlPatterns = { "/0/*" })
+//================================================================
+//don't forget that the url = project_name + "/" + url here !!!!
+//================================================================
+@WebServlet(description = "url_dispatcher", urlPatterns = { "/0/*" }) 
 public class DispatcherController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public DispatcherController() {
@@ -32,7 +35,10 @@ public class DispatcherController extends HttpServlet {
 			int index=Integer.valueOf(path).intValue();
 			request.getRequestDispatcher(s[index]).forward(request, response);  //response.sendRedirect("");
 		} catch (Exception e) {
-			//response.getWriter().println("your URL is not correct,put number after '/0' path.");
+            //you can use response.getWriter().println() to return string to frontend.
+			response.getWriter().println("===================================================");                        
+			response.getWriter().println("your URL is not correct,put number after '/0' path.");
+			response.getWriter().println("===================================================");            
 			super.service(request, response);
 		}
 		
