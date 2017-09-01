@@ -34,6 +34,20 @@ public class DispatcherController extends HttpServlet {
 			String path = url.substring(11, url.length());
 			int index=Integer.valueOf(path).intValue();
 			request.getRequestDispatcher(s[index]).forward(request, response);  //response.sendRedirect("");
+/*
+---------------------------------------------------------------------------------
+Servlet传值给Jsp:
+    String a = "abccdefg "; 
+    request.setAttribute( "ValueA ",a); 
+    request.getRequestDispatcher( "/XX").forward(request,response); 
+jsp页面：
+    <%
+     String s = (String)request.getAttribute( "ValueA ");
+    %>
+
+这样jsp页面就可以取出Servlet的值
+---------------------------------------------------------------------------------
+*/
 		} catch (Exception e) {
             //you can use response.getWriter().println() to return string to frontend.
 			response.getWriter().println("===================================================");                        
