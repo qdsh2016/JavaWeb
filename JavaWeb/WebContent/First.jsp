@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<% 
+//set variable in servlet: request.setAttribute("a", "b"); 
+String x = (String)request.getAttribute("a"); 
+//must print it to show it in frontend !!
+out.print(x);
+%> 
 
 <h1>1.jsp</h1>
 
